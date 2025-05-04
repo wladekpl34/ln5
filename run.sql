@@ -1,1 +1,33 @@
-SELECT * FROM v_Kunde_Auskunft;
+-- @block Kunden ansicht
+SELECT * FROM KUNDE;
+
+-- @block 
+SELECT * FROM REZEPT;
+
+-- @block 
+SELECT * FROM BESTELLUNG;
+
+-- @block
+SELECT * FROM ALLERGEN;
+
+-- @block
+SELECT * FROM ZUTAT;
+
+-- @block
+SELECT * FROM ALLERGEN;
+
+-- @block
+SELECT * FROM ZUTAT_ALLERGEN;
+
+-- @block
+SELECT * FROM ZUTAT_REZEPT;
+
+-- @block
+SELECT * FROM ERNÄHRUNGSKATEGORIE;
+
+-- @block
+SELECT * FROM ERNÄHRUNGSKATEGORIE_REZEPT;
+
+-- @block
+
+SELECT FROM ZUTAT_REZEPT WHERE RzptID = 4 
