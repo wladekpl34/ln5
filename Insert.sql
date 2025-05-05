@@ -189,7 +189,13 @@ Die gewürfelten Kartoffeln und Karotte in die Brühe geben. Alles für ca. 20 m
 
 Anschließend alles mit dem Pürierstab zu einer Suppe pürieren, mit Pfeffer und Muskat abschmecken.
 
-Die in Scheiben geschnittenen Würstchen in den Suppenteller geben und die heiße Kartoffelsuppe darüber gießen.');
+Die in Scheiben geschnittenen Würstchen in den Suppenteller geben und die heiße Kartoffelsuppe darüber gießen.'),
+
+-- Apfelmus 
+('Apfelmus', 'Gib die Äpfel zusammen mit dem Wasser in einen Topf. Du kannst auch den Saft einer halben Zitrone hinzugeben, damit sich das Apfelmus nicht dunkel färbt.
+Bringe alles zum Kochen und lasse die Äpfel dann bei niedriger bis mittlerer Hitze 20 Minuten lang köcheln. 
+Jetzt kannst du die Äpfel entweder grob stampfen, dann hast du selbstgemachtes Apfelkompott. Oder du pürierst sie zu einem Mus. Wenn du es etwas cremiger magst, kannst du vorher etwas von dem Wasser abschütten. 
+Fülle das Apfelmus in sterilisierte Einmachgläser, verschließe diese sofort luftdicht und lasse sie kopfüber abkühlen.');
 
 -- Insert data for ZUTAT_REZEPT table
 INSERT INTO ZUTAT_REZEPT (ZtID, RzptID, Menge, Einheit) VALUES 
@@ -252,6 +258,9 @@ INSERT INTO ZUTAT_REZEPT (ZtID, RzptID, Menge, Einheit) VALUES
 (41, 5, 1, 'Prise'),     -- Majoran
 (24, 5, 1, 'Prise');     -- Muskat
 
+-- Apfelmus
+(46, 6, 2, 'KG') -- Apfel
+
 -- Insert data for ERNÄHRUNGSKATEGORIE_REZEPT table
 INSERT INTO ERNÄHRUNGSKATEGORIE_REZEPT (ErnKtgID, RzptID) VALUES 
 (1, 1), -- Milchreis mit Apfelmus ist vegetarisch
@@ -260,7 +269,9 @@ INSERT INTO ERNÄHRUNGSKATEGORIE_REZEPT (ErnKtgID, RzptID) VALUES
 (3, 3), -- Lachslasagne enthält Fisch
 (4, 4), -- Thaicurry mit Hähnchen enthält Fleisch
 (1, 5), -- Kartoffelsuppe kann vegetarisch sein (mit Tofuwürstchen)
-(4, 5); -- Kartoffelsuppe kann Fleisch enthalten (mit Wiener Würstchen)
+(4, 5), -- Kartoffelsuppe kann Fleisch enthalten (mit Wiener Würstchen)
+(1, 6), -- Apfelmus ist vegetarisch
+(2, 6); -- Apfelmus ist vegan
 
 -- Optional: BESTELLUNG_REZEPT Daten einfügen (falls benötigt)
 INSERT INTO BESTELLUNG_REZEPT (BestellID, RzptID, Menge) VALUES
