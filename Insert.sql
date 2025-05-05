@@ -1,3 +1,41 @@
+-- Insert data for KUNDE table
+INSERT INTO KUNDE (Vorname, Nachnamen, Geburtsdatum, Telefon, Email) VALUES 
+('Kira', 'Wellensteyn', '1990-05-05', '040/443322', 'k.wellensteyn@yahoo.de'),
+('Dorothea', 'Foede', '2000-03-24', '040/543822', 'd.foede@web.de'),
+('Sigrid', 'Leberer', '1989-09-21', '0175/1234588', 'sigrid@leberer.de'),
+('Hanna', 'Soerensen', '1974-04-03', '040/634578', 'h.soerensen@yahoo.de'),
+('Marten', 'Schnitter', '1964-04-17', '0176/447587', 'schni_mart@gmail.com'),
+('Belinda', 'Maurer', '1978-09-09', '040/332189', 'belinda1978@yahoo.de'),
+('Armin', 'Gessert', '1978-01-29', '040/67890', 'armin@gessert.de'),
+('Jean-Marc', 'Haessig', '1982-08-30', '0178-67013390', 'jm@haessig.de'),
+('Eric', 'Urocki', '1999-12-04', '0152-96701390', 'urocki@outlook.de');
+
+-- Insert data for LIEFERANT table
+INSERT INTO LIEFERANT (Name) VALUES 
+('Gemüsegroßhandel Frisch & Co'),
+('Fleischerei Müller'),
+('Bio-Hof Schmidt'),
+('Molkerei Alpenglück'),
+('Fischgroßhandel Meeresbrise'),
+('Bio-Hof Müller'),
+('Obst-Hof Altes Land'),
+('Molkerei Henning');
+
+-- Insert data for ADRESSE table
+INSERT INTO ADRESSE (PLZ, Stadt, Strasse, HausNr, KdID, LfID) VALUES
+(20249, 'Hamburg', 'Eppendorfer Landstrasse', 104, 1, NULL),
+(22765, 'Hamburg', 'Ohmstraße', 23, 2, NULL),
+(20459, 'Hamburg', 'Bilser Berg', 6, 3, NULL),
+(22049, 'Hamburg', 'Alter Teichweg', 95, 4, NULL),
+(22835, 'Barsbüttel', 'Stübels', 10, 5, NULL),
+(21075, 'Hamburg', 'Grotelertwiete', 4, 6, NULL),
+(21079, 'Hamburg', 'Küstersweg', 3, 7, NULL),
+(21149, 'Hamburg', 'Neugrabener Bahnhofstraße', 30, 8, NULL),
+(22605, 'Hamburg', 'Elbchaussee', 228, 9, NULL),
+(24354, 'Weseby', 'Dorfstraße', 74, NULL, 6),
+(21635, 'Jork', 'Westerjork 74', 76, NULL, 7),
+(19217, 'Dechow', 'Molkereiwegkundekunde', 13, NULL, 8);
+
 -- Insert data for ALLERGEN table
 INSERT INTO ALLERGEN (Bezeichnung) VALUES 
 ('Laktose'),
@@ -14,14 +52,6 @@ INSERT INTO ERNÄHRUNGSKATEGORIE (Bezeichnung) VALUES
 ('Fleisch'),
 ('Laktosefrei'),
 ('Glutenfrei');
-
--- Insert data for LIEFERANT table
-INSERT INTO LIEFERANT (Name) VALUES 
-('Gemüsegroßhandel Frisch & Co'),
-('Fleischerei Müller'),
-('Bio-Hof Schmidt'),
-('Molkerei Alpenglück'),
-('Fischgroßhandel Meeresbrise');
 
 -- Insert data for ZUTAT table
 INSERT INTO ZUTAT (Bezeichnung, Bestand, FettProHundertGramm, BallaststoffeProHundertGramm, NatriumProHundertGramm, Co2Bilanz, KalorienProHundertGramm, Nettopreis, KohlenhydrateProHundertGramm, Einheit, LfID) VALUES 
@@ -76,6 +106,17 @@ INSERT INTO ZUTAT (Bezeichnung, Bestand, FettProHundertGramm, BallaststoffeProHu
 ('Schnittlauch', 100, 0.70, 2.50, 0.03, 0.10, 30, 0.99, 4.50, 'Bund', 1),
 ('Majoran', 90, 7.00, 40.00, 0.05, 0.20, 271, 1.29, 61.00, 'Packung', 3);
 
+-- Zusätzliche Zutaten aus paste-2.txt
+INSERT INTO ZUTAT (Bezeichnung, Bestand, FettProHundertGramm, BallaststoffeProHundertGramm, NatriumProHundertGramm, Co2Bilanz, KalorienProHundertGramm, Nettopreis, KohlenhydrateProHundertGramm, Einheit, LfID) VALUES 
+('Rucola', 10, 0.40, 2.60, 0.05, 0.30, 27, 0.90, 2.10, 'Bund', 1),
+('Knoblauch', 250, 0.50, 6.10, 0.02, 0.20, 141, 0.25, 28.40, 'Stück', 1),
+('Basilikum', 10, 0.50, 3.10, 0.02, 0.20, 41, 1.30, 5.10, 'Bund', 1),
+('Süßkartoffel', 200, 0.30, 1.60, 0.01, 0.40, 86, 2.00, 20.00, 'Stück', 1),
+('Apfel', 750, 0.20, 0.30, 0.00, 0.50, 54, 1.20, 14.40, 'Stück', 7),
+('Mozzarella', 20, 18.10, 1.00, 0.00, 5.00, 241, 3.50, 1.00, 'Packung', 8),
+('Ei', 300, 11.90, 1.50, 0.00, 3.00, 137, 0.40, 1.50, 'Stück', 7),
+('Kichererbsen', 400, 9.00, 21.20, 0.00, 0.80, 150, 1.00, 21.20, 'Dose', 8);
+
 -- Insert data for ZUTAT_ALLERGEN table
 INSERT INTO ZUTAT_ALLERGEN (ZtID, AlgID) VALUES 
 (1, 1),  -- Vollmilch enthält Laktose
@@ -91,7 +132,23 @@ INSERT INTO ZUTAT_ALLERGEN (ZtID, AlgID) VALUES
 (34, 4), -- Kartoffeln enthalten Stärke
 (35, 5); -- Karotte enthält... naja, Karotte
 
--- Insert data fobr REZEPT table
+-- Insert data for BESTELLUNG table
+-- Bestellungen aus dem ersten Skript
+INSERT INTO BESTELLUNG (KdID, Bestelldatum, Gesamtpreis) VALUES 
+(1, '2020-07-01', 6.21),
+(2, '2020-07-08', 32.96),
+(3, '2020-08-01', 24.08),
+(4, '2020-08-02', 19.90),
+(5, '2020-08-02', 6.47),
+(6, '2020-08-10', 6.96),
+(7, '2020-08-10', 2.41),
+(8, '2020-08-10', 13.80),
+(9, '2020-08-10', 8.67),
+(7, '2020-08-15', 17.98),
+(5, '2020-08-12', 8.67),
+(3, '2020-08-13', 20.87);
+
+-- Insert data for REZEPT table
 INSERT INTO REZEPT (Name, Anleitung) VALUES 
 -- Milchreis mit Apfelmus
 ('Milchreis mit Apfelmus', 'In einem großen Topf die Butter schmelzen, anschließend den Rundkornreis kurz in der Butter anschwitzen. Nun die zimmerwarme Vollmilch sowie 4 EL Zucker hinzugeben. Vanillezucker hinzugeben. Alles unter vorsichtigem Rühren mit dem Holzkochlöffel einmal aufkochen lassen und dabei aufpassen, dass sich nichts am Topfboden ansetzt.
@@ -210,61 +267,10 @@ INSERT INTO ERNÄHRUNGSKATEGORIE_REZEPT (ErnKtgID, RzptID) VALUES
 (1, 5), -- Kartoffelsuppe kann vegetarisch sein (mit Tofuwürstchen)
 (4, 5); -- Kartoffelsuppe kann Fleisch enthalten (mit Wiener Würstchen)
 
--- Insert sample data for KUNDE table
-INSERT INTO KUNDE (Vorname, Nachnamen, Geburtsdatum, Telefon, Email) VALUES 
-('Max', 'Mustermann', '1985-03-15', '0123456789', 'max.mustermann@example.com'),
-('Anna', 'Schmidt', '1990-07-22', '0987654321', 'anna.schmidt@example.com'),
-('Peter', 'Meyer', '1978-11-05', '0123987456', 'peter.meyer@example.com'),
-('Laura', 'Müller', '1995-02-28', '0456789123', 'laura.mueller@example.com'),
-('Thomas', 'Becker', '1982-09-10', '0789123456', 'thomas.becker@example.com');
-
--- Insert data for ADRESSE table (for Kunden)
-INSERT INTO ADRESSE (PLZ, Stadt, Strasse, HausNr, KdID, LfID) VALUES 
-(10115, 'Berlin', 'Hauptstraße', 1, 1, NULL),
-(20095, 'Hamburg', 'Hafenstraße', 23, 2, NULL),
-(80331, 'München', 'Marienplatz', 8, 3, NULL),
-(50667, 'Köln', 'Domstraße', 15, 4, NULL),
-(60311, 'Frankfurt', 'Goethestraße', 42, 5, NULL);
-
--- Insert data for ADRESSE table (for Lieferanten)
-INSERT INTO ADRESSE (PLZ, Stadt, Strasse, HausNr, KdID, LfID) VALUES 
-(12347, 'Berlin', 'Industriestraße', 78, NULL, 1),
-(22527, 'Hamburg', 'Schlachthofstraße', 12, NULL, 2),
-(81379, 'München', 'Biohofweg', 5, NULL, 3),
-(83661, 'Lenggries', 'Alpenweg', 29, NULL, 4),
-(20457, 'Hamburg', 'Hafenpromenade', 103, NULL, 5);
-
--- Insert data for BESTELLUNG table
-INSERT INTO BESTELLUNG (Gesamtpreis, Bestelldatum, KdID) VALUES 
-(29.95, '2025-01-15', 1),
-(42.50, '2025-01-20', 2),
-(18.75, '2025-02-05', 3),
-(35.20, '2025-02-10', 4),
-(27.80, '2025-02-15', 5),
-(31.45, '2025-03-01', 1),
-(22.90, '2025-03-10', 3),
-(45.60, '2025-04-05', 2),
-(19.95, '2025-04-20', 4),
-(33.25, '2025-05-01', 5);
-
--- Insert data for BESTELLUNG_REZEPT table
-INSERT INTO BESTELLUNG_REZEPT (BestellID, RzptID, Menge) VALUES 
-(1, 1, 2), -- 2x Milchreis für Bestellung 1
-(1, 5, 1), -- 1x Kartoffelsuppe für Bestellung 1
-(2, 3, 2), -- 2x Lachslasagne für Bestellung 2
-(2, 4, 1), -- 1x Thaicurry für Bestellung 2
-(3, 2, 3), -- 3x Couscous-Salat für Bestellung 3
-(4, 4, 2), -- 2x Thaicurry für Bestellung 4
-(4, 5, 1), -- 1x Kartoffelsuppe für Bestellung 4
-(5, 1, 1), -- 1x Milchreis für Bestellung 5
-(5, 2, 1), -- 1x Couscous-Salat für Bestellung 5
-(5, 3, 1), -- 1x Lachslasagne für Bestellung 5
-(6, 3, 2), -- 2x Lachslasagne für Bestellung 6
-(7, 2, 2), -- 2x Couscous-Salat für Bestellung 7
-(7, 5, 1), -- 1x Kartoffelsuppe für Bestellung 7
-(8, 4, 3), -- 3x Thaicurry für Bestellung 8
-(9, 1, 2), -- 2x Milchreis für Bestellung 9
-(9, 5, 1), -- 1x Kartoffelsuppe für Bestellung 9
-(10, 3, 1), -- 1x Lachslasagne für Bestellung 10
-(10, 4, 1), -- 1x Thaicurry für Bestellung 10
-(10, 5, 1); -- 1x Kartoffelsuppe für Bestellung 10
+-- Optional: BESTELLUNG_REZEPT Daten einfügen (falls benötigt)
+INSERT INTO BESTELLUNG_REZEPT (BestellID, RzptID, Menge) VALUES
+(1, 1, 2),  -- Beispiel: Bestellung 1 enthält 2x Milchreis
+(2, 2, 1),  -- Bestellung 2 enthält 1x Couscous-Salat
+(3, 3, 1),  -- Bestellung 3 enthält 1x Lachslasagne
+(4, 4, 1),  -- Bestellung 4 enthält 1x Thaicurry
+(5, 5, 3);  -- Bestellung 5 enthält 3x Kartoffelsuppe
