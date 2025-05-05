@@ -11,7 +11,7 @@ SELECT * FROM BESTELLUNG;
 SELECT * FROM ALLERGEN;
 
 -- @block
-SELECT * FROM ZUTAT;
+SELECT * FROM ZUTAT WHERE ZtID = 4;
 
 -- @block
 SELECT * FROM ALLERGEN;
@@ -30,4 +30,13 @@ SELECT * FROM ERNÄHRUNGSKATEGORIE_REZEPT;
 
 -- @block
 
-SELECT FROM ZUTAT_REZEPT WHERE RzptID = 4 
+SELECT 
+r.Name
+
+FROM ernährungskategorie ek 
+
+JOIN ERNÄHRUNGSKATEGORIE_REZEPT ekr ON ek.ErnKtgID = ekr.ErnKtgID
+
+JOIN REZEPT r ON r.RzptID = ekr.RzptID
+
+WHERE ek.Bezeichnung = "Fleisch"
