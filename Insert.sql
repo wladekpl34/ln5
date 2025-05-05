@@ -43,8 +43,8 @@ INSERT INTO ALLERGEN (Bezeichnung) VALUES
 INSERT INTO ERNÄHRUNGSKATEGORIE (Bezeichnung) VALUES 
 ('Vegetarisch'),
 ('Vegan'),
-('Fisch'),
-('Fleisch'),
+('Pescetarisch'),
+('Allesfresser'),
 ('Laktosefrei'),
 ('Glutenfrei');
 
@@ -101,7 +101,7 @@ INSERT INTO ZUTAT (Bezeichnung, Bestand, FettProHundertGramm, BallaststoffeProHu
 ('Schnittlauch', 100, 0.70, 2.50, 0.03, 0.10, 30, 0.99, 4.50, 'Bund', 101),
 ('Majoran', 90, 7.00, 40.00, 0.05, 0.20, 271, 1.29, 61.00, 'Packung', 101);
 
--- Zusätzliche Zutaten aus paste-2.txt
+-- Zusätzliche Zutaten aus txt
 INSERT INTO ZUTAT (Bezeichnung, Bestand, FettProHundertGramm, BallaststoffeProHundertGramm, NatriumProHundertGramm, Co2Bilanz, KalorienProHundertGramm, Nettopreis, KohlenhydrateProHundertGramm, Einheit, LfID) VALUES 
 ('Rucola', 10, 0.40, 2.60, 0.05, 0.30, 27, 0.90, 2.10, 'Bund', 101),
 ('Knoblauch', 250, 0.50, 6.10, 0.02, 0.20, 141, 0.25, 28.40, 'Stück', 101),
