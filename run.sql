@@ -31,15 +31,11 @@ SELECT * FROM ERNÄHRUNGSKATEGORIE_REZEPT;
 -- @block
 -- Get recipes based on preferred eating habits
 SELECT 
-r.Name
-
-FROM ERNÄHRUNGSKATEGORIE ek 
-
-JOIN ERNÄHRUNGSKATEGORIE_REZEPT ekr ON ek.ErnKtgID = ekr.ErnKtgID
-
-JOIN REZEPT r ON r.RzptID = ekr.RzptID
-
-WHERE ek.Bezeichnung = "Fleisch"
+    r.Name
+FROM ERNÄHRUNGSKATEGORIE ek
+LEFT JOIN ERNÄHRUNGSKATEGORIE_REZEPT ekr ON ek.ErnKtgID = ekr.ErnKtgID
+LEFT JOIN REZEPT r ON r.RzptID = ekr.RzptID
+WHERE ek.Bezeichnung = "Fleisch";
 
 
 -- @block

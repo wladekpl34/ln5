@@ -256,10 +256,10 @@ INSERT INTO ZUTAT_REZEPT (ZtID, RzptID, Menge, Einheit) VALUES
 (15, 5, 1, 'Prise'),     -- Pfeffer
 (40, 5, 1, 'Bund'),      -- Schnittlauch
 (41, 5, 1, 'Prise'),     -- Majoran
-(24, 5, 1, 'Prise');     -- Muskat
+(24, 5, 1, 'Prise'),     -- Muskat
 
 -- Apfelmus
-(46, 6, 2, 'KG') -- Apfel
+(46, 6, 2, 'KG'); -- Apfel
 
 -- Insert data for ERNÄHRUNGSKATEGORIE_REZEPT table
 INSERT INTO ERNÄHRUNGSKATEGORIE_REZEPT (ErnKtgID, RzptID) VALUES 
